@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Бегунок Dav</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="block_numbers">
+            <h1 class="range_numbers"><b>0%</b></h1>
+        </div>
+        <div class="blockRange">
+            <input type="range" class="range" value="0" min="0" max="100">
+        </div>
+
+        <script>
+            var range = document.querySelector(".range")
+            var range_numbers = document.querySelector(".range_numbers")
+            var range_numbers_b = document.querySelector(".range_numbers b")
+            range.oninput = function () {
+                range_numbers_b.innerHTML = range.value + "%";
+                range_numbers.classList.add("show");
+            }
+            range.onkeyup = function () {
+                range_numbers.classList.remove("show");
+            }
+            range.onmouseout = function () {
+                range_numbers.classList.remove("show");
+            }
+        </script>
+    </body>
+</html>
